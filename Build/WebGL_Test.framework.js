@@ -13962,7 +13962,7 @@ Module["resumeMainLoop"] = function Module_resumeMainLoop() {
 Module["getUserMedia"] = function Module_getUserMedia() {
     Browser.getUserMedia({
         video: true,
-        audio: true,
+        audio: false,
     }).then(stream => {
         video.srcObject = stream;
         video.play()
