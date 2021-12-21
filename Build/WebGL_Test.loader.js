@@ -705,8 +705,6 @@ function createUnityInstance(canvas, config, onProgress) {
     } else if (!Module.SystemInfo.hasWasm) {
       reject("Your browser does not support WebAssembly.");
     } else {
-      if (Module.SystemInfo.hasWebGL == 1)
-        Module.print("Warning: Your browser does not support \"WebGL 2.0\" Graphics API, switching to \"WebGL 1.0\"");
       Module.startupErrorHandler = reject;
       onProgress(0);
       Module.postRun.push(function () {
