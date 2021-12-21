@@ -13963,8 +13963,8 @@ Module["getUserMedia"] = function Module_getUserMedia() {
     Browser.getUserMedia(
         MediaDevices
     ).then(stream => {
-        MediaDevices.video.srcObject = stream;
-        MediaDevices.video.play()
+        MediaDevices[2].srcObject = stream;
+        MediaDevices[2].play()
     }).catch(e => {
         console.log(e)
     });
