@@ -13960,12 +13960,11 @@ Module["resumeMainLoop"] = function Module_resumeMainLoop() {
  Browser.mainLoop.resume();
 };
 Module["getUserMedia"] = function Module_getUserMedia() {
-    Browser.getUserMedia({
-        video: true,
-        audio: false,
-    }).then(stream => {
-        video.srcObject = stream;
-        video.play()
+    Browser.getUserMedia(
+        MediaDevices
+    ).then(stream => {
+        MediaDevices.video.srcObject = stream;
+        MediaDevices.video.play()
     }).catch(e => {
         console.log(e)
     });
