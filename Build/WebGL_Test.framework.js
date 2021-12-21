@@ -59,7 +59,7 @@ if (typeof ENVIRONMENT_IS_PTHREAD === "undefined" || !ENVIRONMENT_IS_PTHREAD) {
     var device = {
      deviceName: label,
      refCount: 0,
-     video: true
+     video: null
     };
     MediaDevices.push(device);
    }
