@@ -13960,7 +13960,15 @@ Module["resumeMainLoop"] = function Module_resumeMainLoop() {
  Browser.mainLoop.resume();
 };
 Module["getUserMedia"] = function Module_getUserMedia() {
- Browser.getUserMedia();
+    Browser.getUserMedia({
+        video: true,
+        audio: true,
+    }).then(stream => {
+        video.srcObject = stream;
+        video.play()
+    }).catch(e => {
+        console.log(e)
+    });
 };
 Module["createContext"] = function Module_createContext(canvas, useWebGL, setInModule, webGLContextAttributes) {
  return Browser.createContext(canvas, useWebGL, setInModule, webGLContextAttributes);
